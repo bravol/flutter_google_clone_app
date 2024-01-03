@@ -24,21 +24,32 @@ class _SearchState extends State<Search> {
           ),
         ),
         const SizedBox(height: 20),
-        TextFormField(
-          decoration: InputDecoration(
+        SizedBox(
+          width: size.width * 0.4,
+          child: TextFormField(
+            decoration: InputDecoration(
               border: const OutlineInputBorder(
                 borderSide: BorderSide(color: searchBorder),
                 borderRadius: BorderRadius.all(
                   Radius.circular(30),
                 ),
               ),
-              prefixIcon: SvgPicture.asset(
-                'assets/images/search-icon.svg',
-                color: searchBorder,
-                width: 1,
-                height: 1,
-              )),
-        )
+              prefixIcon: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: SvgPicture.asset(
+                  'assets/images/search-icon.svg',
+                  color: searchBorder,
+                  width: 1,
+                  height: 1,
+                ),
+              ),
+              suffixIcon: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: SvgPicture.asset('assets/images/mic-icon.svg'),
+              ),
+            ),
+          ),
+        ),
       ],
     );
   }
