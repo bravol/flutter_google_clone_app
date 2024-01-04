@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_google_clone_app/colors.dart';
+import 'package:flutter_google_clone_app/screens/search_screen.dart';
 import 'package:flutter_svg/svg.dart';
 
 class Search extends StatefulWidget {
@@ -27,6 +28,14 @@ class _SearchState extends State<Search> {
         SizedBox(
           width: size.width > 768 ? size.width * 0.4 : size.width * 0.9,
           child: TextFormField(
+            onFieldSubmitted: (query) {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) =>
+                      SearchScreen(start: '0', searchQuery: query),
+                ),
+              );
+            },
             decoration: InputDecoration(
               border: const OutlineInputBorder(
                 borderSide: BorderSide(color: searchBorder),
