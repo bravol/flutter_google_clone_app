@@ -16,7 +16,7 @@ class _SearchButtonsState extends State<SearchButtons> {
       children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: const [
+          children: [
             SearchButton(title: 'Google Search'),
             SizedBox(width: 10),
             SearchButton(title: 'I\'m feeling lucky'),
