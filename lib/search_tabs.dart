@@ -21,19 +21,19 @@ class _SearchTabsState extends State<SearchTabs> {
             text: 'ALL',
             isActive: true,
           ),
-          SizedBox(width: 20),
+          SizedBox(width: 10),
           SearchTab(
             icon: Icons.image,
             text: 'Images',
             // isActive: true,
           ),
-          SizedBox(width: 20),
+          SizedBox(width: 10),
           SearchTab(
             icon: Icons.map,
             text: 'Maps',
             // isActive: true,
           ),
-          SizedBox(width: 20),
+          SizedBox(width: 10),
           SearchTab(
             icon: Icons.article,
             text: 'News',

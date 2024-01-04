@@ -14,6 +14,7 @@ class SearchTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Column(
       mainAxisAlignment: MainAxisAlignment.end,
       crossAxisAlignment: CrossAxisAlignment.center,
@@ -24,14 +25,14 @@ class SearchTab extends StatelessWidget {
           children: [
             Icon(
               icon,
-              size: 18,
+              size: size.width <= 768 ? 15 : 18,
               color: isActive ? blueColor : Colors.grey,
             ),
             const SizedBox(width: 3),
             Text(
               text,
               style: TextStyle(
-                fontSize: 18,
+                fontSize: size.width <= 768 ? 15 : 18,
                 color: isActive ? blueColor : Colors.grey,
               ),
             ),

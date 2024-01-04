@@ -24,9 +24,9 @@ class SearchScreen extends StatelessWidget {
             //web header
             const SearchHeader(),
             //tabs for news, images etc
-            const Padding(
-              padding: EdgeInsets.only(left: 150),
-              child: SearchTabs(),
+            Padding(
+              padding: EdgeInsets.only(left: size.width <= 768 ? 10 : 150),
+              child: const SearchTabs(),
             ),
             const Divider(
               height: 0,
