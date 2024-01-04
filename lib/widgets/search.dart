@@ -29,12 +29,14 @@ class _SearchState extends State<Search> {
           width: size.width > 768 ? size.width * 0.4 : size.width * 0.9,
           child: TextFormField(
             onFieldSubmitted: (query) {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) =>
-                      SearchScreen(start: '0', searchQuery: query),
-                ),
-              );
+              if (query.isNotEmpty) {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        SearchScreen(start: '0', searchQuery: query),
+                  ),
+                );
+              }
             },
             decoration: InputDecoration(
               border: const OutlineInputBorder(

@@ -50,7 +50,6 @@ class SearchScreen extends StatelessWidget {
                       .fetchData(queryTerm: searchQuery, start: start),
                   builder: (context, snapshot) {
                     if (snapshot.hasData) {
-                      //
                       return Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -98,38 +97,32 @@ class SearchScreen extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 TextButton(
-                                    child: const Text(
-                                      "< Prev",
-                                      style: TextStyle(
-                                        fontSize: 15,
-                                        color: blueColor,
-                                      ),
-                                    ),
-                                    // if start is 0, we are on the first page
-                                    onPressed: start != "0"
-                                        ? () {
-                                            Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                builder: (context) =>
-                                                    SearchScreen(
-                                                  searchQuery: searchQuery,
-                                                  start: (int.parse(start) - 10)
-                                                      .toString(),
-                                                ),
+                                  // if start is 0, we are on the first page
+                                  onPressed: start != "0"
+                                      ? () {
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (context) =>
+                                                  SearchScreen(
+                                                searchQuery: searchQuery,
+                                                start: (int.parse(start) - 10)
+                                                    .toString(),
                                               ),
-                                            );
-                                          }
-                                        : () {}),
-                                const SizedBox(width: 30),
-                                TextButton(
+                                            ),
+                                          );
+                                        }
+                                      : () {},
                                   child: const Text(
-                                    "Next >",
+                                    "< Prev",
                                     style: TextStyle(
                                       fontSize: 15,
                                       color: blueColor,
                                     ),
                                   ),
+                                ),
+                                const SizedBox(width: 30),
+                                TextButton(
                                   // if start is 0, we are on the first page
                                   onPressed: () {
                                     Navigator.push(
@@ -143,6 +136,13 @@ class SearchScreen extends StatelessWidget {
                                       ),
                                     );
                                   },
+                                  child: const Text(
+                                    "Next >",
+                                    style: TextStyle(
+                                      fontSize: 15,
+                                      color: blueColor,
+                                    ),
+                                  ),
                                 ),
                               ],
                             ),

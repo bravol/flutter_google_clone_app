@@ -11,7 +11,7 @@ class SearchHeader extends StatelessWidget {
     final size = MediaQuery.of(context).size;
 
     return Padding(
-      padding: const EdgeInsets.only(top: 25.0),
+      padding: const EdgeInsets.only(top: 50.0),
       child: Row(
         children: [
           Padding(

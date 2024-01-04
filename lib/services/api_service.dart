@@ -1,11 +1,11 @@
 import 'dart:convert';
-
 import 'package:flutter_google_clone_app/config/api_json.dart';
 import 'package:flutter_google_clone_app/config/api_keys.dart';
 import 'package:http/http.dart' as http;
 
 class ApiServices {
   bool isDummyData = true;
+  // bool isDummyData = false;
 
   Future<Map<String, dynamic>> fetchData(
       {required String queryTerm, String start = '0'}) async {
